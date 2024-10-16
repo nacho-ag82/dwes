@@ -34,6 +34,10 @@ Selecciona una columna:
     <option value="2">Arriba izquierda</option>
     <option value="3">Abajo derecha</option>
     <option value="4">Abajo izquierda</option>
+    <option value="5">Abajo</option>
+    <option value="6">Arriba</option>
+    <option value="7">Izquierda</option>
+    <option value="8">Derecha</option>
 </select>
 <br>
 <button type="submmit" value="enviar">Enviar</button>

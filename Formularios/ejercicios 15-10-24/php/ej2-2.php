@@ -1,24 +1,80 @@
 <?php
+    //obtenemos los datos del post que implican la direccion y las fila y columna de comienzo de conteo
     $direccion = $_REQUEST["direccion"];
-    $fila = $_REQUEST["fila"];
-    $column = $_REQUEST["columna"];
-    $_REQUEST= array_slice($_REQUEST, sizeof($_REQUEST),);
+    $fila = $_REQUEST["fila"]-1;
+    $column = $_REQUEST["columna"]-1;
+    //nos quedamos con la matriz
+    array_pop($_REQUEST);
+    array_pop($_REQUEST);
+    array_pop($_REQUEST);
+    
+
     print_r($_REQUEST);
+    echo "<br>";
     switch ($direccion) {
         case 1:
             //arriba derecha
-            /*for ($i=0; $i < ; $i++) { 
-                # code...
-            }*/
+            for ($i=$fila; $i >=0 ; $i--) { 
+                echo $_REQUEST["num$i$column"];
+                if ($column==sqrt(sizeof($_REQUEST))){
+                    break;
+                }
+                $column++;
+            }
             break;
         case 2:
-            //arriba izuierda
+            //arriba izquierda
+            for ($i=$fila; $i >=0 ; $i--) { 
+                echo $_REQUEST["num$i$column"];
+                if ($column<=0){
+                    break;
+                }
+                $column--;
+            }
             break;
         case 3:
             //abajo derecha
+            for ($i=$fila; $i <sqrt(sizeof($_REQUEST)) ; $i++) { 
+                echo $_REQUEST["num$i$column"];
+                if ($column>=sqrt(sizeof($_REQUEST))){
+                    break;
+                }
+                $column++;
+            }
             break;
         case 4:
             //abajo izquierda
+            for ($i=$fila; $i <sqrt(sizeof($_REQUEST)) ; $i++) { 
+                echo $_REQUEST["num$i$column"];
+                if ($column>=sqrt(sizeof($_REQUEST))){
+                    break;
+                }
+                $column--;
+            }
+            break;
+        case 5:
+            //abajo
+            for($i=$fila; $i<sqrt(sizeof($_REQUEST));$i++){
+                echo $_REQUEST["num$$i$column"];
+            }
+            break;
+        case 6:
+            //arriba
+            for($i=$fila; $i>=0;$i--){
+                echo $_REQUEST["num$i$column"];
+            }
+            break;
+        case 7:
+            //izquierda
+            for($i=$columan; $i>=0;$i--){
+                echo $_REQUEST["num$fila$i"];
+            }
+            break;
+        case 8:
+            //derecha
+            for($i=$fila; $i==sqrt(sizeof($_REQUEST));$i++){
+                echo $_REQUEST["num$fila$i"];
+            }
             break;
     }
 ?>
