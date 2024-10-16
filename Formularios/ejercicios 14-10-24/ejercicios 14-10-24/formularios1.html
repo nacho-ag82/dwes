@@ -1,0 +1,167 @@
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Datos Personales</title>
+	
+</head>
+<body>
+  <!-- Encabezado -->
+    <h1>Ejercicio 1: Formularios Básicos con Método GET y POST</h1>
+    <h3>1. Crea un formulario básico en HTML que envíe información de usuario (nombre,
+        email y edad) a un archivo PHP (procesar.php) usando el método GET.
+        2. Muestra la información recibida en el archivo procesar.php utilizando
+        print_r($_REQUEST) y print_r($_GET).
+        3. Modifica el formulario para usar el método POST y verifica cómo cambia el resultado
+        al usar print_r($_POST).</h3>
+  <!-- Formulario Datos Personales -->
+	<!--<form action="./procesar.php" method="GET">-->
+    <form action="./procesar.php" method="POST">
+		<input type="text" name="nombre" id="nombre" placeholder="nombre"><br>
+        <input type="text" name="email" id="email" placeholder="email"><br>
+        <input type="number" name="edad" id="edad" placeholder="edad"><br>
+		<button type="submmit" value="sumar">Enviar</button>
+	</form>
+
+
+
+    <!-- Encabezado -->
+    <h1>Ejercicio 2: Uso de Distintos Controles de Formulario</h1>
+    <h3>1. Añade diferentes tipos de controles a un formulario, incluyendo:
+        ○ Caja de texto (text).
+        ○ Área de texto (textarea).
+        ○ Caja de contraseña (password).
+        ○ Casillas de verificación (checkbox).
+        ○ Botones radio (radio).
+        ○ Menú desplegable (select con múltiples opciones).
+        2. Envía la información a un archivo PHP y muestra el contenido recibido.
+        3. Verifica qué ocurre cuando no se seleccionan opciones en las casillas de verificación
+        o botones radio y en caso de que se produzca un evento indeseado, corrige el error
+        (p.ej envía mensaje de error al usuario )</h3>
+  <!-- Formulario Datos Personales -->
+	<!--<form action="./procesar.php" method="GET">-->
+    <form action="./procesar2.php" method="POST">
+		<input type="text" name="nombre" id="nombre" placeholder="nombre"><br>
+        <textarea type="text" name="email" id="email" placeholder="email"></textarea><br>
+        <input type="password" name="contraseña" id="contraseña" placeholder="contraseña"><br>
+        <input type="checkbox" name="checkbox" id="checkbox" placeholder="checkbox">
+        <input type="radio" name="radio" value="radio1">
+        <input type="radio" name="radio" value="radio2">
+        <select type="select" name="select" id="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+
+
+		<button type="submmit" value="sumar">Enviar</button>
+	</form>
+
+
+     <!-- Encabezado -->
+     <h1>Ejercicio 3: Manejo de Archivos con input type="file"</h1>
+     <h3>1. Crea un formulario que permita subir un archivo.
+        2. Configura el formulario para que envíe el archivo a un archivo PHP usando
+        enctype="multipart/form-data" y el método POST.
+        3. En el archivo PHP (subir.php), guarda el archivo en una carpeta del servidor y
+        muestra un mensaje indicando si la subida fue exitosa</h3>
+   <!-- Formulario Datos Personales -->
+     <form action="./subir.php" enctype="multipart/form-data" method="POST">
+         <input type="file" name="archivo" id="archivo"><br>
+         <button type="submmit" value="sumar">Enviar</button>
+     </form>
+
+      <!-- Encabezado -->
+      <h1>Ejercicio 4: Formulario con Múltiples Botones de Envío</h1>
+      <h3>1. Crea un formulario con dos botones de envío (input type="submit") y define
+        atributos name y value distintos para cada uno.
+        2. En el archivo PHP que procesa el formulario, verifica cuál de los botones fue
+        presionado y muestra un mensaje específico.</h3>
+    <!-- Formulario Datos Personales -->
+      <form action="./procesar3.php" method="POST">
+          <input type="submit" name="boton1" id="boton1" value="valor1"><br>
+          <input type="submit" name="boton2" id="boton2" value="valor2"><br>
+      </form>
+
+      <!-- Encabezado -->
+      <h1>Ejercicio 5: Validación de Campos y Gestión de Errores</h1>
+      <h3>1. Crea un formulario con campos obligatorios (por ejemplo, nombre y email).
+        2. Al recibir la información en el archivo PHP, verifica que no estén vacíos y que el
+        email tenga un formato válido
+        3. Si la validación falla, muestra un mensaje de error; de lo contrario, muestra la
+        información recibida.
+    </h3>
+    <!-- Formulario Datos Personales -->
+      <form action="./procesar4.php" method="POST">
+        <input type="text" name="nombre" id="nombre" placeholder="nombre" required><br>
+        <input type="text" name="email" id="email" placeholder="email" required><br>
+        <input type="number" name="edad" id="edad" placeholder="edad" required><br>
+		<button type="submmit" value="sumar">Enviar</button>
+      </form>
+
+
+      <!-- Encabezado -->
+      <h1>Ejercicio 6. Comprobación de números con is_numeric() y ctype_digit()
+      </h1>
+      <h3>1. Crear un formulario que reciba un valor y comprobar si el valor introducido es un
+        número utilizando is_numeric() y ctype_digit().
+        
+    </h3>
+    <!-- Formulario Datos Personales -->
+      <form action="./procesar5.php" method="POST">
+        <input type="text" name="valor" id="valor" placeholder="valor" required><br>
+		<button type="submmit" value="sumar">Enviar</button>
+      </form>
+
+
+      <!-- Encabezado -->
+      <h1>Ejercicio 7. Comprobación de tipos de datos con funciones is_</h1>
+      <h3>1. Crear un formulario que reciba diferentes tipos de datos y comprobar el tipo
+        utilizando funciones is_int(), is_float(), is_bool(), is_string(), etc.
+        
+    </h3>
+    <!-- Formulario Datos Personales -->
+      <form action="./procesar6.php" method="POST">
+        
+        <input type="number" name="valor" id="valor" placeholder="valor" required><br>
+        <input type="decimal" name="valor1" id="valor1" placeholder="valor1" required><br>
+        <input type="bool" name="valor2" id="valor2" placeholder="valor2" required><br>
+        <input type="text" name="valor3" id="valor3" placeholder="valor3" required><br>
+		<button type="submmit" value="sumar">Enviar</button>
+      </form>
+
+       <!-- Encabezado -->
+       <h1>Ejercicio 8. Validación con funciones ctype_
+      </h1>
+       <h3>
+        1. Crear un formulario que reciba un valor y validar si el valor es un alfabético
+        (ctype_alpha()), alfanumérico (ctype_alnum()) o solo contiene dígitos
+        (ctype_digit()).
+        
+     </h3>
+     <!-- Formulario Datos Personales -->
+       <form action="./procesar7.php" method="POST">
+         
+         <input type="text" name="valor" id="valor" placeholder="valor" required><br>
+         <button type="submmit" value="sumar">Enviar</button>
+       </form>
+
+
+        <!-- Encabezado -->
+        <h1>Ejercicio 9. Validación con filter_var()
+
+        </h1>
+         <h3>
+          1. Crear un formulario que reciba un correo electrónico y una URL y validar estos datos
+          con filter_var().
+          
+       </h3>
+       <!-- Formulario Datos Personales -->
+         <form action="./procesar8.php" method="POST">
+           
+           <input type="text" name="email" id="email" placeholder="email" required><br>
+           <input type="text" name="url" id="url" placeholder="url" required><br>
+           <button type="submmit" value="sumar">Enviar</button>
+         </form>
+</body>
+</html>

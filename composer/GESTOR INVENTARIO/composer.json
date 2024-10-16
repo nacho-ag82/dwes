@@ -1,0 +1,9 @@
+{
+    "name": "daw_m/gestor-inventario",
+    "autoload": {
+        "psr-4": {
+            "DawM\\GestorInventario\\": "src/"
+        }
+    },
+    "require": {"GestorInventario/functions":""}
+}

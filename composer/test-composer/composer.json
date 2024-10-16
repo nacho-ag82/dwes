@@ -1,0 +1,15 @@
+{
+    "name": "daw_m/test-composer",
+    "autoload": {
+        "psr-4": {
+            "DawM\\TestComposer\\": "src/"
+        }
+    },
+    "require": {
+        "monolog/monolog": "^3.7",
+        "psr/http-message": "2.0"
+    },
+    "scripts": {
+        "dev": "php index.php"
+    }
+}
