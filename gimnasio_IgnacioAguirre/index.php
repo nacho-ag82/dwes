@@ -10,22 +10,16 @@ session_start();
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo de Iron Forge">
+        <img src="img/logo.png" alt="Logo de Iron Forge">
         <h1>Donde se forjan las leyendas</h1>
     </header>
     <nav>
     <a href="catalogo.html">Ver catálogo de ofertas</a>
     </nav>
 
-<nav><form action="login.php" method="post">
-    <label for="usuario">Usuario:</label>
-    <input type="text" id="usuario" name="usuario" required>
-    <br>
-    <label for="contrasena">Contraseña:</label>
-    <input type="password" id="contrasena" name="contrasena" required>
-    <br>
-    <input type="submit" value="Iniciar sesión">
-</form></nav>
+<nav>
+<?php include "app/views/login_form.php" ?>
+</nav>
     <main>
         <section>
             <h3>Sobre Nosotros</h3>
