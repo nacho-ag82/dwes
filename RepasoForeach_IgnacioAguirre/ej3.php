@@ -5,7 +5,7 @@ $lacomunidaddemiscojones=[
     'provincias' => ['Un pelo','Otro Pelo','Villa prepucio del condado'],
     'capital' =>['Villa prepucio del condado'=>['poblacion'=>'la que se acerque','informacion_adicional'=>'Capital mundial de la fabricación del padalustro padalustro']]
 ];
-array_push($comunidades,'MisGuebos'=>[$lacomunidaddemiscojones]);
+array_push($comunidades,[$lacomunidaddemiscojones]);
 print_r($comunidades);
 echo "<br>";
 foreach ($comunidades as $c) {

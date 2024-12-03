@@ -17,14 +17,14 @@ class Videoclub{
         $this->productos[] = $producto;
         $this->numProductos++;
     }
-    public function incluirCintaVideo($titulo, $precio, $duracion){
-
+    public function incluirCintaVideo($titulo,$numero ,$precio, $duracion){
+        $this->incluirProducto(new CintaVideo($titulo, $numero,$precio, $duracion));
     }
-    public function incluirDvd($titulo, $precio, $idiomas, $pantalla){
-
+    public function incluirDvd($titulo,$numero ,$precio, $idiomas, $pantalla){
+        $this->incluirProducto(new Dvd($titulo, $numero,$precio, $idiomas, $pantalla));
     }
-    public function incluirJuego($titulo, $precio, $consola, $minJ, $maxJ){
-        
+    public function incluirJuego($titulo,$numero, $precio, $consola, $minJ, $maxJ){
+        $this->incluirProducto(new ($titulo, $numero,$precio, $duracion));
     }
     public function incluirSocio($nombre, $maxAlquileresConcurrentes = 3){
         
