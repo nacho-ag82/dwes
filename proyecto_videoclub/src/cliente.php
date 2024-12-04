@@ -1,5 +1,7 @@
 <?php 
-class Cliente
+namespace src;
+
+class Cliente implements Mostrable
 {
     public $nombre;
     private $numero;

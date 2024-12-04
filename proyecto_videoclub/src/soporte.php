@@ -1,5 +1,6 @@
 <?php 
-class Soporte{
+namespace src;
+class Soporte implements Mostrable{
     public $titulo;
     protected $numero;
     private $precio;

@@ -1,5 +1,7 @@
 <?php 
-class Juego extends Soporte{
+namespace src;
+
+class Juego extends Soporte  implements Mostrable{
     public $consola;
     private $minNumJugadores;
     private $maxNumJugadores;
