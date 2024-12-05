@@ -1,7 +1,7 @@
 <?php 
-namespace src;
 
-class Dvd extends Soporte implements Mostrable{
+
+class Dvd extends Soporte{
     public $idiomas;
     private $formatPantalla;
     public function __construct($t,$n,$p,$i,$f) {

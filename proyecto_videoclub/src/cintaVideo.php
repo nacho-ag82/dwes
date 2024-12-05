@@ -1,6 +1,6 @@
 <?php
+include "Soporte.php";
 
-namespace src;
 class CintaVideo extends Soporte implements Mostrable{
     private $duracion;
     public function __construct($t,$n,$p,$d) {

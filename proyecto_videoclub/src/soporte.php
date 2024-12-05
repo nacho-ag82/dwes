@@ -1,11 +1,12 @@
 <?php 
-namespace src;
-class Soporte implements Mostrable{
+include "Mostrable.php";
+abstract class Soporte implements Mostrable{
     public $titulo;
     protected $numero;
     private $precio;
     private $IVA = 1.21;
      
+    public bool $alquilado = false;
 
     public function __construct($t, $n,$p) {
         $this->titulo = $t;

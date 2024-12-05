@@ -1,6 +1,8 @@
 <?php 
-
-namespace src;
+include_once "../src/CintaVideo.php";
+include_once "../src/Dvd.php";
+include_once "../src/Juego.php";
+include_once "../src/Cliente.php";
 class Videoclub{
     private $nombre;
     private $productos=[];
@@ -43,13 +45,20 @@ class Videoclub{
             $s->muestraResumen();
         }
     }
-    public function alquilarSocioProducto($numeroCliente, $numeroSoporte): bool{
+    public function alquilarSocioProducto($numeroCliente,array  $numerosProductos):bool{
+        foreach ($this->productos as $p) {
+            if(!array_search($p->getNumero(),$numerosProductos)){
+                return false;
+            }
+        }
         foreach ($this->socios as $s) {
             if ($s->getNumero() == $numeroCliente){
                 foreach ($this->productos as $p) {
-                    if ($p->getNumero() == $numeroSoporte){
-                        $s->alquilar($p);
-                        return true;
+                    foreach($numerosProductos as $np){
+                        if($p->getNumero()==$np){
+                            $s->alquilar($p);
+                            return true;
+                        }
                     }
                 }
                 return false;

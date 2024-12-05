@@ -1,12 +1,13 @@
 <?php 
-namespace src;
 
+include "../util/CupoSuperadoException.php";
+include "../util/SoporteYaAlquiladoException.php";
 class Cliente implements Mostrable
 {
     public $nombre;
     private $numero;
     private $soporteAlquilados=[];
-    private $numSoportesAlquilados;
+    private $numSoportesAlquilados = 0;
     private $maxAlquilerConcurrente;
     public function __construct($n,$nu,$max=3) {
         $this->nombre = $n;
@@ -27,15 +28,29 @@ class Cliente implements Mostrable
     }
 
     public function alquilar(Soporte $soporte):bool{
-        if ($this->numSoportesAlquilados<$this->maxAlquilerConcurrente&&!array_search($soporte, $this->soporteAlquilados)){
-            array_push($this->soporteAlquilados, $soporte);
-            $this->numSoportesAlquilados++;
-            echo "<p>alquiler realizado con exito";
-            $soporte->muestraResumen();
-            echo "</p>";
-            return true;
+        if(!$soporte->alquilado){
+            if ($this->numSoportesAlquilados<$this->maxAlquilerConcurrente){
+                if(!array_search($soporte, $this->soporteAlquilados)){
+                array_push($this->soporteAlquilados, $soporte);
+                $this->numSoportesAlquilados++;
+                echo "<p>alquiler realizado con exito";
+                $soporte->muestraResumen();
+                echo "</p>";
+                $soporte->alquilado=true;
+                return true;
+                }else{
+                    $e = new SoporteNoEncontradoException();
+                    echo $e->text;
+                    return false;
+                }
+            }else{
+                $e = new CupoSuperadoException();
+                echo $e->text;
+                return false;
+            }
         }else{
-            echo "<br>alquiler fallido";
+            $e = new SoporteYaAlquiladoException();
+            $e->text;
             return false;
         }
     }
@@ -54,10 +69,12 @@ class Cliente implements Mostrable
                 array_udiff($this->soporteAlquilados, $s);
                 $this->numSoportesAlquilados--;
                 echo "<br>devolucion realizada con exito";
+                $s->alquilado=false;
                 return true;           
             }
         }
-        echo "<br>devolucion fallida";
+        $e = new SoporteNoEncontradoException();
+        echo $e->text;
         return false;
     }
     public function listaAlquileres(){
