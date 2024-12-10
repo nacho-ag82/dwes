@@ -5,7 +5,7 @@ include "Controllers/UsuarioController.php";
 if (isset($_REQUEST['usuario'])){
     if($_GET['f']='lo'){
         $user = new UsuarioController();
-        $user->logout($data);
+        $user->logout();
     }else{
     $data=[$_REQUEST['usuario'], $_REQUEST['contrasena']];
     $user = new UsuarioController();
@@ -24,7 +24,6 @@ if (isset($_REQUEST['usuario'])){
 
     <main>
         <h2>Iniciar Sesión</h2>
-        <?php if (isset($error)) echo "<p style='color: red;'>$error</p>"; ?>
         <form method="post" action="index.php">
             <label for="usuario">Usuario:</label>
             <input type="text" id="usuario" name="usuario" required>

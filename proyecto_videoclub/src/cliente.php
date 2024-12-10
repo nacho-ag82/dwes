@@ -1,7 +1,7 @@
 <?php 
 
-include "../util/CupoSuperadoException.php";
-include "../util/SoporteYaAlquiladoException.php";
+include "C:/Users/DAW_M/Desktop/mananas/dwes/proyecto_videoclub/util/CupoSuperadoException.php";
+include "C:/Users/DAW_M/Desktop/mananas/dwes/proyecto_videoclub/util/SoporteYaAlquiladoException.php";
 class Cliente implements Mostrable
 {
     public $nombre;

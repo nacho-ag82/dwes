@@ -12,13 +12,13 @@ class UsuarioController
         $usuario = $data['usuario'];
         $contrasena = $data['contrasena'];
 
-        if (isset($this->usuarios[$usuario]) && $this->usuarios[$usuario] === $contrasena) {
+        if (isset($this->usuarios['usuario']) && $this->usuarios['usuario'] === $contrasena) {
             session_start();
             $_SESSION['usuario'] = $usuario;
-            header('Location: main.php');
+            header('Location: ../main.php');
             exit();
         } else {
-            header('Location: index.php');
+            header('Location: ../index.php');
         }
     }
 

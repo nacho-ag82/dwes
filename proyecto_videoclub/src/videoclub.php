@@ -1,8 +1,8 @@
 <?php 
-include_once "../src/CintaVideo.php";
-include_once "../src/Dvd.php";
-include_once "../src/Juego.php";
-include_once "../src/Cliente.php";
+include "CintaVideo.php";
+include "Dvd.php";
+include "Juego.php";
+include "Cliente.php";
 class Videoclub{
     private $nombre;
     private $productos=[];
