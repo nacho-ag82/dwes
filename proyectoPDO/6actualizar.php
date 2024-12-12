@@ -8,15 +8,12 @@ try {
 
     // Conexión a la base de datos
     $conexion = new PDO($mysql, $user, $password, $opciones);
-    $consulta = $conexion->prepare('INSERT INTO mensajes (nombre, email, mensaje) values (:nombre,:email,:mensaje)');
-    $nombre = "Sabali";
-    $email = "pichatiesa@email.com";
-    $mensaje = "la tengo flojiya";
-    $consulta->bindParam(':nombre', $nombre);
-    $consulta->bindParam(':email', $email);
-    $consulta->bindParam(':mensaje', $mensaje);
+    $conexion->exec('UPDATE productos SET precio="2" WHERE id = 1');
 
-    $consulta->execute();
+
+
+
+   
 
 
 }
