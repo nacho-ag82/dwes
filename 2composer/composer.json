@@ -1,0 +1,17 @@
+{
+    "name": "daw_m/2composer",
+    "autoload": {
+        "psr-4": {
+            "DawM\\2composer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nacho-ag82",
+            "email": "iagugar398@g.educaand.es"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.8"
+    }
+}
