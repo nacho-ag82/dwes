@@ -1,0 +1,17 @@
+{
+    "name": "daw_m/monologos",
+    "autoload": {
+        "psr-4": {
+            "DawM\\Src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nacho-ag82",
+            "email": "iagugar398@g.educaand.es"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.8"
+    }
+}

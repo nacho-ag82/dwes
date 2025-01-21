@@ -1,0 +1,18 @@
+{
+    "name": "daw_m/loggers",
+    "autoload": {
+        "psr-4": {
+            "DawM\\Loggers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nacho-ag82",
+            "email": "iagugar398@g.educaand.es"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.8",
+        "psr/log": "^3.0"
+    }
+}
